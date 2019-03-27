@@ -2,6 +2,10 @@
 
 This repo holds the definition of all the specification extensions and protocolInfo objects the AsyncAPI Initiative supports.
 
+## What's an extension?
+
+Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-specific features. Extensions follow a separate release cycle and everyone can create their own. This repository is meant to contain a list of official and community supported extensions.
+
 ## Examples of extension definition
 
 > Both, JSON or YAML, are supported formats. Please, take into account that only the subset of YAML that can be translated to JSON is allowed.
