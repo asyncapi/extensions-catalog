@@ -10,6 +10,8 @@ definitions:
       - 'channels.*.publish'
     schema:
       type: object
+      required:
+        - version
       properties:
         version:
           type: string
@@ -38,6 +40,7 @@ definitions:
       - description: Usage for HTTP streaming APIs.
         example:
           http:
+            version: '0.1.0'
             response:
               headers:
                 Transfer-Encoding: chunked
