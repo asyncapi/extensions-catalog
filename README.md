@@ -1,6 +1,6 @@
 # Extensions catalog
 
-This repo holds the definition of all the specification extensions and protocolInfo objects the AsyncAPI Initiative supports.
+This is a placeholder for definitions of AsyncAPI specification extensions and protocolInfo objects.
 
 ## What's an extension?
 
