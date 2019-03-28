@@ -2,6 +2,18 @@
 
 This is a placeholder for definitions of AsyncAPI specification extensions and protocolInfo objects.
 
+#### Index:
+
+<!-- TOC depthFrom:2 depthTo:2 -->
+
+- [What's an extension?](#whats-an-extension)
+- [Examples of extension definition](#examples-of-extension-definition)
+- [Types of extensions](#types-of-extensions)
+- [Adding your extension to the catalog](#adding-your-extension-to-the-catalog)
+- [Questions?](#questions)
+
+<!-- /TOC -->
+
 ## What's an extension?
 
 Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-specific features. Extensions follow a separate release cycle and everyone can create their own. This repository is meant to contain a list of official and community supported extensions.
