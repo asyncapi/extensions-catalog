@@ -1,6 +1,6 @@
 
 id: sqs
-type: binding
+type: bindings
 title: SQS Extension supporting FIFO & Standard Queques
 description: Defines the configuration parameters required for AWS SQS for both standard and FIFO ordered queues
 version: '0.1.0'
@@ -72,35 +72,39 @@ definitions:
       examples:
         - description: Example configuration for both fifo & standard queues
           exampleFIFOPublish:
-            sqs:
-              publish:
-                version: '0.1.0'
-                queueType: fifo
-                name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test.fifo'
-                messageGroupId: 10020
-                messageDeduplicationId: 102
-                action: SendMessage
+            publish:
+              bindings:
+                sqs:
+                  version: '0.1.0'
+                  queueType: fifo
+                  name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test.fifo'
+                  messageGroupId: 10020
+                  messageDeduplicationId: 102
+                  action: SendMessage
           exampleFIFOSubscribe:
-            sqs:
-              subscribe:
-                version: '0.1.0'
-                queueType: fifo
-                name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test.fifo'
-                attributeNames: 'MessageGroupId'
-                maxNumberOfMessages: 10
-                visibilityTimeout: 20
-                waitTimeSeconds: 2
-                receiveRequestAttemptId: 'attempt123'
-                messageAttributeName:
-                  - 'myCustomAttribute1'
-                  - 'myCustomAttribute2'
-                action: 'ReceiveMessage'
+            subscribe:
+              bindings:
+                sqs:
+                  version: '0.1.0'
+                  queueType: fifo
+                  name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test.fifo'
+                  attributeNames: 'MessageGroupId'
+                  maxNumberOfMessages: 10
+                  visibilityTimeout: 20
+                  waitTimeSeconds: 2
+                  receiveRequestAttemptId: 'attempt123'
+                  messageAttributeName:
+                    - 'myCustomAttribute1'
+                    - 'myCustomAttribute2'
+                  action: 'ReceiveMessage'
           exampleStandardSubscribe:
-            sqs:
-              subscribe:
-                version: '0.1.0'
-                queueType: standard
-                name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test'
-                action: 'ReceiveMessage'
+            subscribe:
+              bindings:
+                sqs:
+                  subscribe:
+                    version: '0.1.0'
+                    queueType: standard
+                    name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test'
+                    action: 'ReceiveMessage'
 
 
