@@ -1,6 +1,6 @@
 
 id: sqs
-type: bindings
+type: generic
 title: SQS Extension supporting FIFO & Standard Queques
 description: Defines the configuration parameters required for AWS SQS for both standard and FIFO ordered queues
 version: '0.1.0'
@@ -106,5 +106,4 @@ definitions:
                     queueType: standard
                     name: 'https://sqs.ap-soautheast-2.amazonaws.com/75555555/msqs-test'
                     action: 'ReceiveMessage'
-
 
