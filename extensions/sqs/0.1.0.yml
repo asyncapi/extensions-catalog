@@ -5,6 +5,14 @@ title: SQS Extension supporting FIFO & Standard Queques
 description: Defines the configuration parameters required for AWS SQS for both standard and FIFO ordered queues
 version: '0.1.0'
 author: Paul Taylor
+contact:
+  email: p.taylor@mulesoft.com
+  url: https://github.com/Paul-T-AU
+  name: Paul Taylor
+tags:
+  - queues
+  - ordering
+  - fifo
 definitions:
 
   - hooks:
