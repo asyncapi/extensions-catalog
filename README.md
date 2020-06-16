@@ -1,6 +1,6 @@
 # Extensions catalog
 
-This is a placeholder for definitions of AsyncAPI specification extensions and protocolInfo objects.
+This is a placeholder for definitions of AsyncAPI specification extensions and bindings objects.
 
 #### Index:
 
@@ -56,20 +56,20 @@ info:
 ...
 ```
 
-### HTTP Protocol Info
+### HTTP Binding
 
-This is the example definition of an HTTP protocolInfo extension.
+This is the example definition of an HTTP bindings extension.
 
 ```yaml
 id: http
-type: protocol-info # Means it's a "protocolInfo" type of extension.
-title: HTTP Protocol Info
+type: bindings # Means it's a "bindings" type of extension.
+title: HTTP Binding Extension
 description: This object allows you to define HTTP-specific details in AsyncAPI.
 version: '0.1.0'
 author: Fran Mendez <fmvilas@gmail.com> (fmvilas.com)
 definitions:
   - hooks: # JMESPath queries to indicate where this extension is allowed in the AsyncAPI document. In this case, it's allowed in all the operation (publish/subscribe) objects.
-      - 'channels.*.subscribe' 
+      - 'channels.*.subscribe'
       - 'channels.*.publish'
     schema: # This is the schema that validates the extension content. It's in JSON Schema Draft 07.
       type: object
@@ -118,7 +118,7 @@ asyncapi: '2.0.0'
 channels:
   /tweets:
     subscribe:
-      protocolInfo:
+      bindings:
         http:
           version: '0.1.0'
           response:
@@ -130,11 +130,11 @@ channels:
 
 ## Types of extensions
 
-Extensions can be of type `generic` or `protocol-info`.
+Extensions can be of type `generic` or `bindings`.
 
-Generic extensions are those that are preceeded by `x-`, e.g., `x-twitter`, and they can be placed anywhere in the AsyncAPI document. 
+Generic extensions are those that are preceeded by `x-`, e.g., `x-twitter`, and they can be placed anywhere in the AsyncAPI document.
 
-ProtocolInfo extensions are those that live inside a `protocolInfo` object and are related to protocol-specific functionality or characteristics. E.g., `http`, `kafka`, `amqp`, etc. As opposed to generic extensions, these can only be applied in a very limited set of places, namely, where the `protocolInfo` is allowed, i.e., a channel object, an operation object or a message object.
+Bindings extensions are those that live inside a `bindings` object and are related to protocol-specific functionality or characteristics. E.g., `http`, `kafka`, `amqp`, etc. As opposed to generic extensions, these can only be applied in a very limited set of places, namely, where the `bindings` is allowed, i.e., a channel object, an operation object or a message object.
 
 ## Adding your extension to the catalog
 
