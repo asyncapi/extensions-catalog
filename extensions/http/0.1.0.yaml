@@ -1,6 +1,6 @@
 id: http
-type: protocol-info
-title: HTTP Protocol Info
+type: bindings
+title: HTTP Binding Extension 
 description: This object allows you to define HTTP-specific details in AsyncAPI.
 version: '0.1.0'
 author: Fran Mendez <fmvilas@gmail.com> (fmvilas.com)
