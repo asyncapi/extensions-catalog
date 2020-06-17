@@ -16,9 +16,9 @@
         },
         "type": {
             "type": "string",
-            "description": "Type of extension. Either protocol-info or generic.",
+            "description": "Type of extension. Either bindings or generic.",
             "enum": [
-                "protocol-info",
+                "bindings",
                 "generic"
             ]
         },
