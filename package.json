@@ -6,7 +6,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "generate:assets": "echo 'No assets to generate yet'",
+    "bump:version": "echo 'No automated version bump as we do not release this package yet'",
+    "lint": "echo 'No linter integrated yet'",
+    "release": "echo 'This package is not yet released'"
   },
   "repository": {
     "type": "git",
