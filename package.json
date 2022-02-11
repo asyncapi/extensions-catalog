@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/asyncapi/extensions-catalog#readme",
   "devDependencies": {
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "colors": "^1.3.3",
     "fs-walk": "0.0.2",
     "js-yaml": "^3.13.1",
