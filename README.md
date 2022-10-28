@@ -1,6 +1,6 @@
 # Extensions catalog
 
-This is a placeholder for definitions of AsyncAPI specification extensions and bindings objects.
+This is a placeholder for definitions of AsyncAPI specification extensions.
 
 #### Index:
 
@@ -8,15 +8,19 @@ This is a placeholder for definitions of AsyncAPI specification extensions and b
 
 - [What's an extension?](#whats-an-extension)
 - [Examples of extension definition](#examples-of-extension-definition)
-- [Types of extensions](#types-of-extensions)
+- [Usage in an AsyncAPI document](#usage-in-an-AsyncAPI-document)
 - [Adding your extension to the catalog](#adding-your-extension-to-the-catalog)
 - [Questions?](#questions)
 
 <!-- /TOC -->
 
-## What's an extension?
+ ## What's an extension?
 
 Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-specific features. Extensions follow a separate release cycle and everyone can create their own. This repository is meant to contain a list of official and community supported extensions.
+
+<!--## How we express extensions -->
+
+
 
 ## Examples of extension definition
 
@@ -46,6 +50,7 @@ definitions:
 ```
 
 #### Usage in an AsyncAPI document
+AsyncAPI extensions are those that are preceeded by `x-`, e.g., `x-twitter`, and they can be placed anywhere in the AsyncAPI document.
 
 ```yaml
 asyncapi: '2.0.0'
@@ -55,86 +60,6 @@ info:
   x-twitter: '@wonderapi'
 ...
 ```
-
-### HTTP Binding
-
-This is the example definition of an HTTP bindings extension.
-
-```yaml
-id: http
-type: bindings # Means it's a "bindings" type of extension.
-title: HTTP Binding Extension
-description: This object allows you to define HTTP-specific details in AsyncAPI.
-version: '0.1.0'
-author: Fran Mendez <fmvilas@gmail.com> (fmvilas.com)
-definitions:
-  - hooks: # JMESPath queries to indicate where this extension is allowed in the AsyncAPI document. In this case, it's allowed in all the operation (publish/subscribe) objects.
-      - 'channels.*.subscribe'
-      - 'channels.*.publish'
-    schema: # This is the schema that validates the extension content. It's in JSON Schema Draft 07.
-      type: object
-      required:
-        - version
-      properties:
-        version:
-          type: string
-          const: '0.1.0' # It's a good idea to specify what version of the extension are you using. It will facilitate things to tooling and will allow you to have different versions of the same extension in a single document.
-        response:
-          type: object
-          additionalProperties: false
-          properties:
-            headers:
-              type: object
-              additionalProperties: true
-              propertyNames:
-                type: string
-                pattern: '^[a-zA-Z0-9\\.\\-_]+$'
-        request:
-          type: object
-          additionalProperties: false
-          properties:
-            headers:
-              type: object
-              additionalProperties: true
-              propertyNames:
-                type: string
-                pattern: '^[a-zA-Z0-9\\.\\-_]+$'
-    examples:
-      - description: Usage for HTTP streaming APIs.
-        example:
-          http:
-            version: '0.1.0'
-            response:
-              headers:
-                Transfer-Encoding: chunked
-                Trailer: '\\r\\n'
-```
-
-#### Usage in an AsyncAPI document
-
-```yaml
-asyncapi: '2.0.0'
-...
-channels:
-  /tweets:
-    subscribe:
-      bindings:
-        http:
-          version: '0.1.0'
-          response:
-            headers:
-              Transfer-Encoding: chunked
-              Trailer: '\\r\\n'
-...
-```
-
-## Types of extensions
-
-Extensions can be of type `generic` or `bindings`.
-
-Generic extensions are those that are preceeded by `x-`, e.g., `x-twitter`, and they can be placed anywhere in the AsyncAPI document.
-
-Bindings extensions are those that live inside a `bindings` object and are related to protocol-specific functionality or characteristics. E.g., `http`, `kafka`, `amqp`, etc. As opposed to generic extensions, these can only be applied in a very limited set of places, namely, where the `bindings` is allowed, i.e., a channel object, an operation object or a message object.
 
 ## Adding your extension to the catalog
 
