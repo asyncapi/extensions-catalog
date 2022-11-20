@@ -14,7 +14,7 @@ This is a placeholder for definitions of AsyncAPI specification extensions.
 
 <!-- /TOC -->
 
- ## What's an extension?
+## What's an extension?
 
 Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-specific features. Extensions follow a separate release cycle and everyone can create their own. This repository is meant to contain a list of official and community supported extensions.
 
