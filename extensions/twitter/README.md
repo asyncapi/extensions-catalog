@@ -1,5 +1,5 @@
 # Twitter extension
-This document defines how to describe twitter extension on AsyncAPI.
+This document defines how to use `twitter` extension in AsyncAPI documents.
 
 ## Twitter Object
 The `twitter` object must contain: 
