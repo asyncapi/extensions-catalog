@@ -2,7 +2,7 @@
 This document defines how to describe twitter extension on AsyncAPI.
 
 ## Twitter Object
-The twitter object must contains  : 
+The `twitter` object must contain: 
 
 Field Name | Type | Description
 ---|:---:|---
