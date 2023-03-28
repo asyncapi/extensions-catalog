@@ -8,7 +8,7 @@ This is a repository for definitions of AsyncAPI specification extensions.
 
 - [What's an extension?](#whats-an-extension)
 - [Usage in an AsyncAPI document](#usage-in-an-AsyncAPI-document)
-- [Twitter Extension](./extensions/twitter/)
+- [List of extensions](#list-of-extensions)
 - [Adding your extension to the catalog](#adding-your-extension-to-the-catalog)
 - [Questions?](#questions)
 
@@ -24,6 +24,8 @@ Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-sp
 #### Usage in an AsyncAPI document
 AsyncAPI extensions are those that are preceded by `x-`, e.g., `x-twitter`. They can be placed in the AsyncAPI document in locations specified by documentation of given extension.
 
+## List of Extensions
+- [Twitter Extension](./extensions/twitter/)
 
 ## Adding your extension to the catalog
 
