@@ -2,7 +2,9 @@
 This document defines how to use `twitter` extension in AsyncAPI documents.
 
 ## Overview 
-This extension allows you to place the twitter account in charge of the company/team of the API
+This extension allows you to place the twitter account in charge of the team/company of the API
+
+## Extension Definition
 
 ## Twitter Object
 The `twitter` object must contain: 
