@@ -18,6 +18,9 @@ Field Name | Type | Description
 
 ## Extension Location 
 
+This extension can be used in the following locations:
+- [Info Object](https://www.asyncapi.com/docs/reference/specification/v2.5.0#infoObject)
+  
 <a name="payloadObject"></a>
 ## Payload Object
 Field Name | Type | Description
