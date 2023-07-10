@@ -1,6 +1,9 @@
 # Twitter extension
 This document defines how to use `twitter` extension in AsyncAPI documents.
 
+## Overview 
+This extension allows you to place the twitter account in charge of the company/team of the API
+
 ## Twitter Object
 The `twitter` object must contain: 
 
@@ -11,7 +14,7 @@ Field Name | Type | Description
 <a name="extensionDescription"></a>`description` |string| The description of the Twitter extension. 
 <a name="extensionPayload"></a>`payload` | Json Object  |**Required**. A JSON object containing the detail of the Twitter account. 
 
-
+## Extension Location 
 
 <a name="payloadObject"></a>
 ## Payload Object
