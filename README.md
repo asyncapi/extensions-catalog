@@ -8,7 +8,6 @@ This is a repository for definitions of AsyncAPI specification extensions.
 
 - [What's an extension?](#whats-an-extension)
 - [Usage in an AsyncAPI document](#usage-in-an-AsyncAPI-document)
-- [List of extensions](#list-of-extensions)
 - [Adding your extension to the catalog](#adding-your-extension-to-the-catalog)
 - [Questions?](#questions)
 
