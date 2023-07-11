@@ -24,9 +24,6 @@ Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-sp
 #### Usage in an AsyncAPI document
 AsyncAPI extensions are those that are preceded by `x-`, e.g., `x-twitter`. They can be placed in the AsyncAPI document in locations specified by documentation of given extension.
 
-## List of Extensions
-- [Twitter Extension](./extensions/twitter/)
-
 ## Adding your extension to the catalog
 
 If you'd like to add your extension to the catalog, please submit a pull request to this repository. Make sure the extension doesn't exist already, in which case it would be better to improve the existing one so everybody benefits from it.
