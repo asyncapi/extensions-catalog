@@ -20,7 +20,7 @@ This extension can be used in the following locations:
 ## Example
 
 ```yaml
-asyncapi: '2.5.0'
+asyncapi: '2.6.0'
 info
   title: Strretlights Kafka API
   version: '1.0.0'
