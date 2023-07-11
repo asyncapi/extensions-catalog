@@ -10,7 +10,7 @@ Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-sp
 > Both, JSON or YAML, are supported formats. Please, take into account that only the subset of YAML that can be translated to JSON is allowed. 
 ### Type: String
 
-Name of the Twitter profile.
+Name of the Twitter username.
 
 ## Extension Location 
 
