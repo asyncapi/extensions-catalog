@@ -2,7 +2,7 @@
 This document defines how to use `twitter` extension in AsyncAPI documents.
 
 ## Overview 
-This extension allows you to place the twitter account in charge of the team/company of the API.
+This extension allows you to provide the Twitter username of the account representing the team/company of the API.
 
 ## Extension Definition
 Extensions are the mechanism AsyncAPI has to allow you use custom or protocol-specific features. Extensions follow a separate release cycle and everyone can create their own. This repository is meant to contain a list of official and community supported extensions.
