@@ -1,19 +1,10 @@
-# AsyncAPI Specification Contribution Guide
+# AsyncAPI Extensions Catalog Contribution Guide
 
-AsyncAPI is an evolving language. This repository contains the
-specification text as well as Pull Requests with suggested improvements and
-contributions.
+AsyncAPI is an evolving language. This repository contains the Extensions as well as Pull Requests with suggested improvements and contributions.
 
-Contributions that do not change the interpretation of the spec but instead
-improve legibility, fix editorial errors, clear up ambiguity and improve
-examples are encouraged and are often merged by a spec Committer with
-little process.
+Contributions that do not change the interpretation of the extensions but instead improve legibility, fix editorial errors, clear up ambiguity and improve examples are encouraged and are often merged by a extension Committer with little process.
 
-However, contributions that _do_ meaningfully change the interpretation of the
-spec must follow an RFC (Request For Comments) process led by a *[champion](#champion-definition)*
-through a series of *stages* intended to improve *visibility*, allow for
-*discussion* to reach the best solution, and arrive at *consensus*. This process
-becomes even more important as AsyncAPI's community broadens.
+However, contributions that _do_ meaningfully change the interpretation of the extensions must follow an RFC (Request For Comments) process through a series of *stages* intended to improve *visibility*, allow for *discussion* to reach the best solution, and arrive at *consensus*. This process becomes even more important as AsyncAPI's community broadens.
 
 When proposing or weighing-in on any issue or pull request, consider the
 [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
@@ -227,14 +218,6 @@ Once *rejected*, an RFC will typically not be reconsidered. Reconsideration is
 possible if a *champion* believes the original reason for rejection no longer
 applies due to new circumstances or new evidence.
 
-## Champion definition
-
-A champion is anyone who leads the work on an RFC. It doesn't
-mean it has to be the only person working on it though. They
-are a "person of reference" for a given RFC implementation and
-may or may not know about JS, relying on the help of other
-community members to implement the RFC on the
-[AsyncAPI JS Parser](https://www.github.com/asyncapi/parser-js) and the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas).
 
 ## Merging pull requests
 
@@ -243,13 +226,6 @@ A pull request can be merged if all the following conditions are met:
 * There is, at least, a mininum of 3 approvals from the [repository code owners](./CODEOWNERS).
 * Sufficient time has passed to let all code owners review the pull request. As of now, it should be a minimum of 1 week. If all code owners have already approved a pull request, it's ok not to wait for this period of time.
 
-## Linting specification document
-
-Always make sure that the specification markdown file has no markdown-related errors.
-
-Instead of waiting for GitHub Actions workflow to check markdown file, you can do it locally by calling the following docker command:
-```bash
-docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:v0.35.0 "spec/asyncapi.md"
 ```
 
 ## References
