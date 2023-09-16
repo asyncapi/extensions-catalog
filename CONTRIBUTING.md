@@ -1,4 +1,4 @@
-# AsyncAPI Extensions Catalog Contribution Guide
+# Contributing Extensions for AsyncAPI Specification
 
 AsyncAPI is an evolving language. This repository contains the Extensions as well as Pull Requests with suggested improvements and contributions.
 
