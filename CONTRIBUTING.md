@@ -10,24 +10,6 @@ When proposing or weighing-in on any issue or pull request, consider the [Code o
 to better understand expected and unacceptable behavior.
 
 
-## Contributing to AsyncAPI Libraries
-
-A common point of confusion for those who wish to contribute to AsyncAPI is where
-to start. In fact, you may have found yourself here after attempting to make an
-improvement to an AsyncAPI library. Should a new addition be made to the AsyncAPI
-spec first or an AsyncAPI library first? Admittedly, this can become a bit of a
-[chicken-or-egg](https://en.wikipedia.org/wiki/Chicken_or_the_egg) dilemma.
-
-AsyncAPI libraries seek to be "spec compliant", which means they discourage
-changes that cause them to behave differently from the spec as written. However,
-they also encourage pull requests for changes that accompany an RFC *proposal*
-or RFC *draft*. In fact, a spec contribution RFC won't be *accepted* until it
-has experience being implemented in an AsyncAPI library.
-
-To allow a library to remain spec compliant while also implementing *proposals*
-and *drafts*, the library's maintainers may request that these new features are
-disabled by default with opt-in option flags or they may simply wait to merge a
-well-tested pull request until the spec proposal is *accepted*.
 
 
 ## Guiding Principles
