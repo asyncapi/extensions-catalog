@@ -6,8 +6,7 @@ Contributions that do not change the interpretation of the extensions but instea
 
 However, contributions that _do_ meaningfully change the interpretation of the extensions must follow an RFC (Request For Comments) process through a series of *stages* intended to improve *visibility*, allow for *discussion* to reach the best solution, and arrive at *consensus*. This process becomes even more important as AsyncAPI's community broadens.
 
-When proposing or weighing-in on any issue or pull request, consider the
-[Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
+When proposing or weighing-in on any issue or pull request, consider the [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
 to better understand expected and unacceptable behavior.
 
 
