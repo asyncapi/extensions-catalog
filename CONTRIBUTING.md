@@ -14,41 +14,10 @@ to better understand expected and unacceptable behavior.
 
 ## Guiding Principles
 
-AsyncAPI's evolution is guided by a few principles. Suggested contributions
-should use these principles to guide the details of an RFC and decisions to
-move forward.
-
-* **Favor no change**
-
-  As AsyncAPI is implemented in many languages under the collaboration
-  of a lot of individuals, incorporating any change has a high cost.
-  Accordingly, proposed changes must meet a very high bar of added value.
-  The burden of proof is on the contributor to illustrate this value.
-
-* **Enable new capabilities motivated by real use cases**
-
-  Every change should intend on unlocking a real and reasonable use case. Real
-  examples are always more compelling than theoretical ones, and common
-  scenarios are more compelling than rare ones. RFCs should do more than offer
-  a different way to reach an already achievable outcome.
-
-* **Simplicity and consistency over expressiveness and terseness**
-
-  "Possible but awkward" is often favored over more complex
-  alternatives. Simplicity (e.g. fewer concepts) is more important than
-  expressing more sophisticated ideas or writing less.
-
-* **Preserve option value**
-
-  It's hard to know what the future brings; whenever possible, decisions should
-  be made that allow for more options in the future. Sometimes this is
-  unintuitive: spec rules often begin more strict than necessary with a future
-  option to loosen when motivated by a real use case.
-
-* **Understandability is just as important as correctness**
-
-  The AsyncAPI spec, despite describing technical behavior, is intended to be
-  read by people. Use natural tone and include motivation and examples.
+- Make sure that extension is well documented with good examples,
+- Explain the use case,
+- Try to improve existing extensions, before you contribute a competing one,
+- Start discussion with an issue. Don't start with pull request first.
 
 
 ## RFC Contribution Champions
