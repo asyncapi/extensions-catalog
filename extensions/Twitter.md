@@ -1,4 +1,8 @@
-# Twitter extension
+---
+title: 'Twitter Extension'
+weight: 30
+---
+
 This document defines how to use `twitter` extension in AsyncAPI documents.
 
 ## Overview 
