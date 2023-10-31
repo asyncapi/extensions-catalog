@@ -1,5 +1,5 @@
 ---
-title: 'Twitter Extension'
+title: 'Twitter'
 weight: 30
 ---
 
