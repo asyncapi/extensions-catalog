@@ -1,7 +1,3 @@
----
-title: 'Twitter'
-weight: 30
----
 
 This document defines how to use `twitter` extension in AsyncAPI documents.
 
