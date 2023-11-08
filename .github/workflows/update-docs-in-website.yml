@@ -38,6 +38,33 @@ jobs:
           mkdir -p ./pages/docs/reference/extensions
           printf "%s\ntitle: Extensions\nweight: 10\n%s" "---" "---"> ../extensions-catalog/extensions/_section.md
           mv ../extensions-catalog/extensions/*.md ./pages/docs/reference/extensions
+      - name: 
+        working-directory: ./website
+        run: 
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            const { writeFile } = require('fs');
+            var slug = {
+              "value": "reference/extensions/",
+              "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+            };
+            const data = require('./config/edit-page-config.json');
+            const checkSlug="reference/extensions/"
+            flag=0;
+            data.map(function (item){
+              if(item.value==checkSlug) flag=1; 
+            })
+            if(flag==0){ 
+            data.push(slug);
+            const path = './config/edit-page-config.json';
+              writeFile(path, JSON.stringify(data,null,2), (error) => {
+                if (error) {
+                  console.log('An error has occurred ', error);
+                  return;
+                }
+              })
+            }
       - name: Commit and push
         working-directory: ./website
         run: |
