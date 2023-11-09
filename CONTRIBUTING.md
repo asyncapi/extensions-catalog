@@ -11,6 +11,7 @@ to better understand expected and unacceptable behavior.
 - Explain the use case,
 - Try to improve existing extensions, before you contribute a competing one,
 - Start discussion with an issue. Don't start with pull request first.
-- All the extensions file must be place in [Extensions folder](https://github.com/asyncapi/extensions-catalog/tree/master/extensions)
+- All the extensions file must be place in [extensions folder](https://github.com/asyncapi/extensions-catalog/tree/master/extensions)
+- Follow the correct file name structure starting with the name of the extension in lowercase.
 - Pull request with new or improved extension will be merged only if there is compliant implementation in the the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas), [AsyncAPI JS Parser](https://www.github.com/asyncapi/parser-js) and the [AsyncAPI React component](https://github.com/asyncapi/asyncapi-react).
 - You do not have to fulfil all the requirements upon pull request creation. First focus on documentation and a use case. Once maintainers of the catalog tell you that it is the right time to work on tooling implementation, then start doing it or fund volunteers that can help.
