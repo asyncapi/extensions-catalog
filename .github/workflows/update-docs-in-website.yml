@@ -38,10 +38,9 @@ jobs:
           mkdir -p ./pages/docs/reference/extensions
           printf "%s\ntitle: Extensions\nweight: 10\n%s" "---" "---"> ../extensions-catalog/extensions/_section.md
           mv ../extensions-catalog/extensions/*.md ./pages/docs/reference/extensions
-      - name: 
+      - name: Update edit-page-config.json
+        uses: actions/github-script@v4
         working-directory: ./website
-        run: 
-      - uses: actions/github-script@v4
         with:
           script: |
             const { writeFile } = require('fs');
@@ -65,6 +64,30 @@ jobs:
                 }
               })
             }
+      - name: Update title and weight
+        uses: actions/github-script@v4
+        working-directory: ./website
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const filePath = 'pages/docs/reference/extensions/twitter.md'; 
+            const baseName=path.basename(filePath,'.md')
+            console.log(baseName)
+            const newData = `---\ntitle: '${baseName}' \nweight: 10\n---\n\n`;
+
+            fs.readFile(filePath, 'utf8', (err, data) => {
+              if (err) {
+                console.error(err);
+              } else {
+                const updatedContent = newData + data;
+                fs.writeFile(filePath, updatedContent, (err) => {
+                  if (err) {
+                    console.error(err);
+                  }
+                });
+              }
+            });      
       - name: Commit and push
         working-directory: ./website
         run: |
