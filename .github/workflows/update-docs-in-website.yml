@@ -40,8 +40,8 @@ jobs:
           mv ../extensions-catalog/extensions/*.md ./pages/docs/reference/extensions
       - name: Update edit-page-config.json
         uses: actions/github-script@v4
-        working-directory: ./website
         with:
+          working-directory: ./website
           script: |
             const { writeFile } = require('fs');
             var slug = {
@@ -66,28 +66,39 @@ jobs:
             }
       - name: Update title and weight
         uses: actions/github-script@v4
-        working-directory: ./website
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const filePath = 'pages/docs/reference/extensions/twitter.md'; 
-            const baseName=path.basename(filePath,'.md')
-            console.log(baseName)
-            const newData = `---\ntitle: '${baseName}' \nweight: 10\n---\n\n`;
-
-            fs.readFile(filePath, 'utf8', (err, data) => {
+            const folderPath = 'extensions'; 
+            fs.readdir(folderPath, (err, files) => {
               if (err) {
-                console.error(err);
+                console.error('Error reading the folder:', err);
               } else {
-                const updatedContent = newData + data;
-                fs.writeFile(filePath, updatedContent, (err) => {
-                  if (err) {
+                files.forEach((file,ind=10) => {
+            
+                    const filePath = path.join(folderPath, file);
+                    const baseName=path.basename(filePath,'.md')
+            
+                    console.log(baseName)
+                        const newData = `---\ntitle: '${baseName}' \nweight: ${ind+11}\n---\n\n`;
+            
+                    fs.readFile(filePath, 'utf8', (err, data) => {
+                    if (err) {
+                      console.error(err);
+                    } else {
+                    const updatedContent = newData + data;
+                    fs.writeFile(filePath, updatedContent, (err) => {
+                          if (err) {
                     console.error(err);
-                  }
+                          }
+                    });
+              }
+            });
+                    
                 });
               }
-            });      
+            });
       - name: Commit and push
         working-directory: ./website
         run: |
