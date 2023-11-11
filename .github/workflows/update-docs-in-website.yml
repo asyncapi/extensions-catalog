@@ -3,9 +3,9 @@ name: Update latest Extensions documentation in the website
 on:
   push:
     branches:
-      - 'master'
+      - "master"
     paths:
-      - 'docs/*.md'
+      - "docs/*.md"
 
 jobs:
   Make-PR:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Current repository
         uses: actions/checkout@v3
         with:
-          path: extensions
+          path: extensions-catalog
       - name: Checkout Another repository
         uses: actions/checkout@v3
         with:
@@ -32,73 +32,51 @@ jobs:
         working-directory: ./website
         run: |
           git checkout -b update-extensions-docs-${{ github.sha }}
+      - name: Update edit-page-config.json
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const { writeFile } = require('fs').promises;
+            const configPath = './website/config/edit-page-config.json';
+            const checkSlug = 'reference/extensions/';
+            const slug = {
+              "value": checkSlug,
+              "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+            };
+          
+            const configData = require(configPath);
+            const entryExists = configData.some(entry => entry.value === checkSlug);
+            if (!entryExists) {
+              configData.push(slug);
+              await writeFile(configPath, JSON.stringify(configData, null, 2))
+            } 
+      - name: Update title and weight of the markdown files
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const folderPath = 'extensions';
+            await fs.readdir(folderPath, (err, files) => {
+              files.forEach((file, ind = 10) => {
+                const filePath = path.join(folderPath, file);
+                const baseName = path.basename(filePath, '.md')
+          
+                const newData = `---\ntitle: '${baseName}' \nweight: ${ind + 11}\n---\n\n`;
+          
+                fs.readFile(filePath, 'utf8', (err, data) => {
+                  const updatedContent = newData + data;
+                  fs.writeFile(filePath, updatedContent, () => {
+                  });
+                });
+              });
+            });
       - name: Copy extensions folder from Current Repo to Another
         working-directory: ./website
         run: |
           mkdir -p ./pages/docs/reference/extensions
           printf "%s\ntitle: Extensions\nweight: 10\n%s" "---" "---"> ../extensions-catalog/extensions/_section.md
           mv ../extensions-catalog/extensions/*.md ./pages/docs/reference/extensions
-      - name: Update edit-page-config.json
-        uses: actions/github-script@v4
-        with:
-          working-directory: ./website
-          script: |
-            const { writeFile } = require('fs');
-            var slug = {
-              "value": "reference/extensions/",
-              "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
-            };
-            const data = require('./config/edit-page-config.json');
-            const checkSlug="reference/extensions/"
-            flag=0;
-            data.map(function (item){
-              if(item.value==checkSlug) flag=1; 
-            })
-            if(flag==0){ 
-            data.push(slug);
-            const path = './config/edit-page-config.json';
-              writeFile(path, JSON.stringify(data,null,2), (error) => {
-                if (error) {
-                  console.log('An error has occurred ', error);
-                  return;
-                }
-              })
-            }
-      - name: Update title and weight
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-            const folderPath = 'extensions'; 
-            fs.readdir(folderPath, (err, files) => {
-              if (err) {
-                console.error('Error reading the folder:', err);
-              } else {
-                files.forEach((file,ind=10) => {
-            
-                    const filePath = path.join(folderPath, file);
-                    const baseName=path.basename(filePath,'.md')
-            
-                    console.log(baseName)
-                        const newData = `---\ntitle: '${baseName}' \nweight: ${ind+11}\n---\n\n`;
-            
-                    fs.readFile(filePath, 'utf8', (err, data) => {
-                    if (err) {
-                      console.error(err);
-                    } else {
-                    const updatedContent = newData + data;
-                    fs.writeFile(filePath, updatedContent, (err) => {
-                          if (err) {
-                    console.error(err);
-                          }
-                    });
-              }
-            });
-                    
-                });
-              }
-            });
       - name: Commit and push
         working-directory: ./website
         run: |
