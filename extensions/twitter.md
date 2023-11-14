@@ -1,17 +1,26 @@
----
-title: 'twitter' 
-weight: 13
----
+# Twitter Extension
+This document defines how to use `twitter` extension in AsyncAPI documents.
 
----
-title: 'twitter' 
-weight: 13
----
+## Overview 
+This extension allows you to provide the Twitter username of the account representing the team/company of the API.
 
----
-title: 'twitter' 
-weight: 13
----
+## Extension Definition
 
-sdffhskfglnvsdf
-gsdghdf
+### Type: String
+
+Name of the Twitter username.
+
+## Extension Location 
+
+This extension can be used in the following locations:
+- [Info Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#infoObject)
+
+## Example
+
+```yaml
+asyncapi: '2.6.0'
+info
+  title: Strretlights Kafka API
+  version: '1.0.0'
+  x-twitter: StreetLightData
+```
