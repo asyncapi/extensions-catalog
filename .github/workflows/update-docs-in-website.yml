@@ -5,7 +5,7 @@ on:
     branches:
       - "master"
     paths:
-      - "docs/*.md"
+      - "extensions/*.md"
 
 jobs:
   Make-PR:
@@ -56,7 +56,7 @@ jobs:
           script: |
             const fs = require('fs').promises;
             const path = require('path');
-            const folderPath = 'extensions';
+            const folderPath = './extensions-catalog/extensions';
             const files = await fs.readdir(folderPath);
             files.forEach(async (file, ind = 10) => {
               const filePath = path.join(folderPath, file);
