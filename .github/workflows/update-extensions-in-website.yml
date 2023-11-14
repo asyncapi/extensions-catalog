@@ -66,6 +66,7 @@ jobs:
               const existingFileData = await fs.readFile(filePath, 'utf8');
               const updatedContent = newData + existingFileData;
               await fs.writeFile(filePath, updatedContent);
+            }
       - name: Copy extensions folder from Current Repo to Another
         working-directory: ./website
         run: |
