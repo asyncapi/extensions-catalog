@@ -6,7 +6,6 @@ This extension allows you to provide the Twitter username of the account represe
 
 ## Extension Definition
 
-
 ### Type: String
 
 Name of the Twitter username.
