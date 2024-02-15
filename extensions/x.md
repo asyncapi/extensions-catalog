@@ -4,6 +4,9 @@ This document defines how to use `twitter` extension in AsyncAPI documents.
 ## Overview 
 This extension allows you to provide the Twitter username of the account representing the team/company of the API.
 
+## Version
+Current version is `0.1.0`.
+
 ## Extension Definition
 
 ### Type: String
