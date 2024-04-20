@@ -11,19 +11,19 @@ Current version is `0.1.0`.
 
 ### Type: String
 
-Name of the Linkedin username.
+URL of the Linkedin Profile of the user or company.
 
 ## Extension Location 
 
 This extension can be used in the following locations:
-- [Info Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#infoObject)
+- [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject)
 
 ## Example
 
 ```yaml
-asyncapi: '2.6.0'
+asyncapi: '3.0.0'
 info
   title: Strretlights Kafka API
   version: '1.0.0'
-  x-linkedin: StreetLightData
+  x-linkedin: https://www.linkedin.com/company/asyncapi
 ```
