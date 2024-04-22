@@ -23,7 +23,7 @@ This extension can be used in the following locations:
 ```yaml
 asyncapi: '3.0.0'
 info
-  title: Strretlights Kafka API
+  title: AsyncAPI Initiative Example
   version: '1.0.0'
   x-linkedin: https://www.linkedin.com/company/asyncapi
 ```
