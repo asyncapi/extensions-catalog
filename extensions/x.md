@@ -25,5 +25,5 @@ asyncapi: '3.0.0'
 info
   title: Strretlights Kafka API
   version: '1.0.0'
-  x-twitter: StreetLightData
+  x-x: StreetLightData
 ```
