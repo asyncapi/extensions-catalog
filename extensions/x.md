@@ -1,4 +1,4 @@
-# Twitter Extension
+# Twitter/X Extension
 This document defines how to use `x` extension in AsyncAPI documents.
 
 ## Overview 
