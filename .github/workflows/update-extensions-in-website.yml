@@ -70,9 +70,9 @@ jobs:
       - name: Copy extensions folder from Current Repo to Another
         working-directory: ./website
         run: |
-          mkdir -p ./pages/docs/reference/extensions
+          mkdir -p ./markdown/docs/reference/extensions
           printf "%s\ntitle: Extensions\nweight: 10\n%s" "---" "---"> ../extensions-catalog/extensions/_section.md
-          mv ../extensions-catalog/extensions/*.md ./pages/docs/reference/extensions
+          mv ../extensions-catalog/extensions/*.md ./markdown/docs/reference/extensions
       - name: Commit and push
         working-directory: ./website
         run: |
